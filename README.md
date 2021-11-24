@@ -4,8 +4,12 @@ Pàgina web que permetrà als professors autenticar-se amb el correu de l’inst
 
 ## Idea general del funcionament de la web:
 La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta forma un professor que no estigui al centre no podrà accedir a la web per fitxar.  
-Pàgina de login amb integració de google per entrar amb el correu de l’escola.  
-Al logejar ja comptarà com fitxat, i dins de la pàgina hi haurà un horari amb les assignatures que l'usuari imparteix i les hores.  
+
+## Funcionalitats:
+* Autenticació mitjançant gmail per utilitzar el correu de l'institut.
+* Horari dinàmic segons l'usuari (profe) loginejat.  
+* Fitxar i desfitxar (per defecte si no desfitxes a última hora es farà sol,pero la possibilitat de fer-ho manualment permetrà que si un professor marxa a meitat del dia, es pugui registrar).
+* Recompte d'hores setmanals de classe i comparaciò amb les hores fitxades.
 
 ## Tecnologies:
 #### Frontend:
