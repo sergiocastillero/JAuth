@@ -10,6 +10,8 @@ La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta f
 * Horari dinàmic segons l'usuari (profe) loginejat.  
 * Fitxar i desfitxar (per defecte si no desfitxes a última hora es farà sol,pero la possibilitat de fer-ho manualment permetrà que si un professor marxa a meitat del dia, es pugui registrar).
 * Recompte d'hores setmanals de classe i comparaciò amb les hores fitxades.
+### Ampliacions:
+* Fitxar per huella/QR/metodes alternatius
 
 ## Tecnologies:
 #### Frontend:
