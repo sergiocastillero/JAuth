@@ -20,6 +20,7 @@ La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta f
 
 ## Problemes/Riscos:
 * Dificultats derivades d'utilitzar tecnologies noves.
+* Alta probabilitat de no poder desenvolupar les ampliacions degut a la seva complexitat donat que no tenim cap experiencia en el tema.
 
 ## Tecnologies:
 #### Frontend:
