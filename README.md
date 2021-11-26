@@ -18,6 +18,9 @@ La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta f
 ### Ampliacions:
 * Fitxar per huella/QR/metodes alternatius
 
+## Problemes/Riscos:
+* Dificultats derivades d'utilitzar tecnologies noves.
+
 ## Tecnologies:
 #### Frontend:
 * HTML
@@ -47,4 +50,4 @@ Roger - 9h
 Adrian - 9h
 Anna - 6.5h
 
-+ Hores extres que poguèm fer a casa
+I hores extres que poguèm fer a casa
