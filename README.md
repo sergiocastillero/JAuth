@@ -3,9 +3,9 @@
 Pàgina web que permetrà als professors autenticar-se amb el correu de l’institut per fitxar quan entren a treballar.
 
 ## Membres del grup:
-Roger Pérez
-Adrian Villacis
-Anna Lea
+Roger Pérez  
+Adrian Villacis  
+Anna Lea  
 
 ## Idea general del funcionament de la web:
 La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta forma un professor que no estigui al centre no podrà accedir a la web per fitxar.  
