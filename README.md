@@ -1,14 +1,17 @@
 # Web per fitxar pels profes:
 ## Proposta:
 Pàgina web que permetrà als professors autenticar-se amb el correu de l’institut per fitxar quan entren a treballar.
+Aplicació mòvil (Android i iOS) que permetrà fitxar escanejant un codi QR
 
 ## Membres del grup:
 Roger Pérez  
 Adrian Villacis  
 Anna Lea  
+Sergio Castillero  
 
 ## Idea general del funcionament de la web:
-La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta forma un professor que no estigui al centre no podrà accedir a la web per fitxar.  
+La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta forma un professor que no estigui al centre no podrà accedir a la web per fitxar. 
+El codi QR estarà o bé imprés o bé a una pantalla a l'escola per poder escanejar-lo en arribar.
 
 ## Funcionalitats:
 * Autenticació mitjançant gmail per utilitzar el correu de l'institut.
@@ -21,13 +24,17 @@ La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta f
 ## Problemes/Riscos:
 * Dificultats derivades d'utilitzar tecnologies noves.
 * Alta probabilitat de no poder desenvolupar les ampliacions degut a la seva complexitat donat que no tenim cap experiencia en el tema.
+* Integrar correctament l'aplicació movil i la pàgina web a l'hora.
 
 ## Tecnologies:
 #### Frontend:
+##### WEB:
 * HTML
 * Javascript
 * Sass
 * Svelte o Vue - (opcional)
+##### APP: 
+
 #### Backend:
 * Typescript
 * Express.js
