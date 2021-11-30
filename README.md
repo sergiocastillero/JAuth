@@ -1,7 +1,7 @@
 # Web per fitxar pels profes:
 ## Proposta:
 Pàgina web que permetrà als professors autenticar-se amb el correu de l’institut per fitxar quan entren a treballar.
-Aplicació mòvil (Android i iOS) que permetrà fitxar escanejant un codi QR
+Aplicació mòvil (Android) que permetrà fitxar escanejant un codi QR
 
 ## Membres del grup:
 Roger Pérez  
@@ -34,6 +34,8 @@ El codi QR estarà o bé imprés o bé a una pantalla a l'escola per poder escan
 * Sass
 * Svelte o Vue - (opcional)
 ##### APP: 
+* Android Studio
+* Java
 
 #### Backend:
 * Typescript
