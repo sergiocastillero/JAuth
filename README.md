@@ -56,8 +56,9 @@ Incorpora login amb xarxes socials, que facilitarà autenticar-se amb el correu 
 Es el que sabem utilitzar i perque necessitem una base de dades relacional
 
 ## Availability:
-Roger - 9h
-Adrian - 9h
-Anna - 6.5h
+Roger - 9h  
+Adrian - 9h  
+Anna - 6.5h  
+Sergio - 9h
 
 I hores extres que poguèm fer a casa
