@@ -14,12 +14,18 @@ La pàgina es servirà de manera local a la xarxa de l’institut, d’aquesta f
 El codi QR estarà o bé imprés o bé a una pantalla a l'escola per poder escanejar-lo en arribar.
 
 ## Funcionalitats:
-* Autenticació mitjançant gmail per utilitzar el correu de l'institut.
+### Pagina web: 
+* Login mitjançant correu de l'institut, els professors nomès podràn fitxar, pero els perfils de gestió (direcció, cap d'estudis, etc) podràn monitoritzar les hores fitxades de cada docent.
 * Horari dinàmic segons l'usuari (profe) loginejat.  
 * Fitxar i desfitxar (per defecte si no desfitxes a última hora es farà sol,pero la possibilitat de fer-ho manualment permetrà que si un professor marxa a meitat del dia, es pugui registrar).
 * Recompte d'hores setmanals de classe i comparaciò amb les hores fitxades.
+### Aplicaciò mòvil: 
+* Totes les funcionalitats de la pàgina.
+* Fichar mitjançant codi QR, un botò, NFC, i possibles metodes que decidim ampliar.
+* A la app se t'enviarà una push quan et toqui desfitxar, si no es desfitxa, segueix enviant pushes cada cop mes frequents.
+
 ### Ampliacions:
-* Fitxar per huella/QR/metodes alternatius
+* Quan t'envia un push per desfitxar, 
 
 ## Problemes/Riscos:
 * Dificultats derivades d'utilitzar tecnologies noves.
