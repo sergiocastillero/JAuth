@@ -22,10 +22,7 @@ El codi QR estarà o bé imprés o bé a una pantalla a l'escola per poder escan
 ### Aplicaciò mòvil: 
 * Totes les funcionalitats de la pàgina.
 * Fichar mitjançant codi QR, un botò, NFC, i possibles metodes que decidim ampliar.
-* A la app se t'enviarà una push quan et toqui desfitxar, si no es desfitxa, segueix enviant pushes cada cop mes frequents.
-
-### Ampliacions:
-* Quan t'envia un push per desfitxar, 
+* A la app se t'enviarà una push quan et toqui desfitxar, si no es desfitxa, segueix enviant pushes cada cop mes frequents. 
 
 ## Problemes/Riscos:
 * Dificultats derivades d'utilitzar tecnologies noves.
@@ -38,6 +35,7 @@ El codi QR estarà o bé imprés o bé a una pantalla a l'escola per poder escan
 * HTML
 * Javascript
 * Sass
+* TailwindCSS (opcional)
 * Svelte o Vue - (opcional)
 ##### APP: 
 * Android Studio
