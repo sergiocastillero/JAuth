@@ -42,16 +42,16 @@ El codi QR estarà o bé imprés o bé a una pantalla a l'escola per poder escan
 * Java
 
 #### Backend:
-* Typescript
-* Express.js
+* php
+* Laravel
 * Firebase (logins)
 * MySQL (dades)
 
 > Rest API montada amb el framework Express.js per fer operacions CRUD
-#### Per què Typescript?
-Similaritat sintactica amb JavaScript afegint la possibilitat de tipar les dades, que ajuda a la claretat i al debugging del codi
-#### Per què Express?
-Facilitza el desenvolupament d'una API respecte a fer-lo de forma convencional
+#### Per què php?
+Perque es el que aprendrém simultaneament a l'assignatura d'M07, de forma que podrém posar en pràctica els coneixements d'aquesta assignatura
+#### Per què Laravel?
+És el framework mes popular de php per aquest objectiu
 #### Per què Sass?
 Perque fa que la sintaxi del css sigui molt mès clara
 #### Per què Firebase?
