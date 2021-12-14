@@ -44,8 +44,11 @@ El codi QR estarà o bé imprés o bé a una pantalla a l'escola per poder escan
 #### Backend:
 * php
 * Laravel
-* Firebase (logins)
+* OAuth (logins)
 * MySQL (dades)
+
+## Diagrama ER BBDD
+![](https://i.imgur.com/2rfGsZV.png)
 
 > Rest API montada amb el framework Express.js per fer operacions CRUD
 #### Per què php?
@@ -54,10 +57,11 @@ Perque es el que aprendrém simultaneament a l'assignatura d'M07, de forma que p
 És el framework mes popular de php per aquest objectiu
 #### Per què Sass?
 Perque fa que la sintaxi del css sigui molt mès clara
-#### Per què Firebase?
+#### Per què OAuth?
 Incorpora login amb xarxes socials, que facilitarà autenticar-se amb el correu de l’institut
 #### Per que MySQL?
 Es el que sabem utilitzar i perque necessitem una base de dades relacional
+
 
 ## Availability:
 Roger - 9h  
