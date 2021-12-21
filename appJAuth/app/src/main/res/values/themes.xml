@@ -19,6 +19,16 @@
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
+    <style name="nav_view.Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="fontFamily">@font/comicneue_bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="listPreferredItemHeightSmall">60dp</item>
+    </style>
+
+    <style name="NavigationTheme" parent="Theme.JAuth">
+        <item name="listPreferredItemHeightSmall">60dp</item><!-- menu item height- vary as u need -->
+    </style>
+
     <style name="Theme.JAuth.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
