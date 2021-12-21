@@ -22,4 +22,10 @@
         android:name="com.example.jauth.Fragments.Assists.AssistsFragment"
         android:label="@string/menu_assists"
         tools:layout="@layout/fragment_assists" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.jauth.Fragments.Settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

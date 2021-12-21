@@ -7,7 +7,6 @@
     <string name="welcomeToJAuth">Welcome to JAuth, you have arrived? Well, authenticate and get to work!</string>
     <string name="signIn">Sign in</string>
     <string name="signUp">Sign up</string>
-    <string name="action_settings">Settings</string>
     <string name="default_web_client_id_manual" translatable="false">942078009683-oma2vsfasofealpeuk0hv8qu2m2tsi01.apps.googleusercontent.com</string>
     <string name="methodEmail">Continue with email</string>
     <string name="detail">Details</string>
@@ -43,5 +42,5 @@
     <string name="menu_auth">Authenticate</string>
     <string name="menu_schedule">Schedule</string>
     <string name="menu_assists">Assists</string>
-
+    <string name="menu_settings">Settings</string>
 </resources>
