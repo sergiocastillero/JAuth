@@ -1,4 +1,4 @@
-package com.example.jauth.Fragments.Auth;
+package com.example.jauth.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,24 +16,14 @@ import com.example.jauth.databinding.FragmentAuthBinding;
 
 public class AuthFragment extends Fragment {
 
-    private AuthViewModel authViewModel;
     private FragmentAuthBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        authViewModel =
-                new ViewModelProvider(this).get(AuthViewModel.class);
 
         binding = FragmentAuthBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.textHome;
-        authViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        
         return root;
     }
 

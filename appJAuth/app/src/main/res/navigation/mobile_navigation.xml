@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/nav_auth"
-        android:name="com.example.jauth.Fragments.Auth.AuthFragment"
+        android:name="com.example.jauth.Fragments.AuthFragment"
         android:label="@string/menu_auth"
         tools:layout="@layout/fragment_auth" />
 
     <fragment
         android:id="@+id/nav_schedule"
-        android:name="com.example.jauth.Fragments.Schedule.ScheduleFragment"
+        android:name="com.example.jauth.Fragments.ScheduleFragment"
         android:label="@string/menu_schedule"
         tools:layout="@layout/fragment_schedule" />
 
     <fragment
         android:id="@+id/nav_assists"
-        android:name="com.example.jauth.Fragments.Assists.AssistsFragment"
+        android:name="com.example.jauth.Fragments.AssistsFragment"
         android:label="@string/menu_assists"
         tools:layout="@layout/fragment_assists" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.jauth.Fragments.Settings.SettingsFragment"
+        android:name="com.example.jauth.Fragments.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

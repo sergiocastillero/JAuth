@@ -1,4 +1,4 @@
-package com.example.jauth.Fragments.Assists;
+package com.example.jauth.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,24 +16,14 @@ import com.example.jauth.databinding.FragmentAssistsBinding;
 
 public class AssistsFragment extends Fragment {
 
-    private AssistsViewModel assistsViewModel;
     private FragmentAssistsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        assistsViewModel =
-                new ViewModelProvider(this).get(AssistsViewModel.class);
 
         binding = FragmentAssistsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        assistsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 

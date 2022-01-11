@@ -1,4 +1,4 @@
-package com.example.jauth.Fragments.Schedule;
+package com.example.jauth.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,24 +16,14 @@ import com.example.jauth.databinding.FragmentScheduleBinding;
 
 public class ScheduleFragment extends Fragment {
 
-    private ScheduleViewModel scheduleViewModel;
     private FragmentScheduleBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        scheduleViewModel =
-                new ViewModelProvider(this).get(ScheduleViewModel.class);
 
         binding = FragmentScheduleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        scheduleViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 

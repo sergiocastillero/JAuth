@@ -5,17 +5,20 @@
       <map>
         <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.1259259259259259" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/ic_menu_assists.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_menu_settings.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_openmenu.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/rectangle.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1259259259259259" />
         <entry key="app/src/main/res/font/comic_neue.xml" value="0.1259259259259259" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_assists.xml" value="0.35572916666666665" />
-        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.11203703703703703" />
+        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.17251461988304093" />
         <entry key="app/src/main/res/layout/fragment_schedule.xml" value="0.11203703703703703" />
-        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.25" />
         <entry key="app/src/main/res/layout/menu_nav_header.xml" value="0.11203703703703703" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/prelogin_screen.xml" value="0.3074712643678161" />
