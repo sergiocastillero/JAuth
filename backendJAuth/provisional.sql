@@ -16,10 +16,9 @@ CREATE TABLE Teachers(
     email VARCHAR(25)
 );
 CREATE TABLE Fichar(
-    teacher_id varchar(128),
-    hora_ent TIMESTAMP NOT NULL,
-    hora_sal TIMESTAMP NOT NULL,
-    tipo ENUM('Entrada','Salida'),
+    teacher_id varchar(128) NOT NULL,
+    hora TIMESTAMP NOT NULL,
+    tipo ENUM('Entrada','Salida') NOT NULL,
 
     FOREIGN KEY (teacher_id) REFERENCES Teachers(id)
 );
@@ -28,3 +27,6 @@ INSERT INTO Teachers (id, name, last_name, pwd) VALUES ('mco7','Pepe','Villuela'
 INSERT INTO Teachers (id, name, last_name, pwd) VALUES ('meg4c9','Agustín','Hernandez','ahahahah');
 INSERT INTO Teachers (id, name, last_name, pwd) VALUES ('4wn36','Antonia','Benito','abenitoaaa');
 INSERT INTO Teachers (id, name, last_name, pwd) VALUES ('3f8j9','Maria','Del Carmen','mariadelc123');
+
+INSERT INTO Fichar VALUES ('mco7','2022-01-01 10:30:35','Entrada');
+INSERT INTO Fichar VALUES ('mco7','2022-01-01 15:05:18','Salida');
