@@ -22,16 +22,16 @@
         app:srcCompat="@drawable/rectangle" />
 
     <Button
-        android:id="@+id/signUpBtn2"
+        android:id="@+id/btn_Check"
         android:layout_width="232dp"
         android:layout_height="48dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/babyBlue"
+        android:backgroundTint="@color/botton_background_color"
         android:fontFamily="@font/comicneue_bold"
-        android:text="@string/signUp"
+        android:text="@string/CheckIn"
         android:textAllCaps="false"
-        android:textColor="@color/oxfordBlue"
+        android:textColor="@color/botton_text_color"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
