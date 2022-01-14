@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 
 
-Route::get('/prueba', function () {
-    return view('prueba');
+Route::get('/prueba/{param}/{param2}', function ($param,$param2) {
+    return view('prueba', ['param'=>$param, 'param2'=>$param2]);
 });

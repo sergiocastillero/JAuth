@@ -7,6 +7,6 @@
         <title>prueba</title>
     </head>
     <body>
-        <h1>GOOD JOB</h1>
+        <h1>GOOD {{  $param }} {{  $param2 }}</h1>
     </body>
 </html>
