@@ -51,6 +51,9 @@ El codi QR estarà o bé imprés o bé a una pantalla a l'escola per poder escan
 ## Diagrama ER BBDD
 ![](https://i.imgur.com/2rfGsZV.png)
 
+## MockAPI
+[Link to mockAPI](https://jauth.docs.apiary.io)
+
 #### Per què php?
 Perque es el que aprendrém simultaneament a l'assignatura d'M07, de forma que podrém posar en pràctica els coneixements d'aquesta assignatura
 #### Per què Laravel?
