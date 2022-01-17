@@ -18,7 +18,7 @@ CREATE TABLE Teachers(
 CREATE TABLE Fichar(
     teacher_id varchar(128) NOT NULL,
     hora TIMESTAMP NOT NULL,
-    tipo ENUM('Entrada','Salida') NOT NULL,
+    tipo ENUM('Entrada','Salida'),
 
     FOREIGN KEY (teacher_id) REFERENCES Teachers(id)
 );
