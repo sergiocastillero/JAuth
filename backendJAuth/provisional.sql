@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS Fichar;
 
 CREATE TABLE Teachers(
     id varchar(128) PRIMARY KEY,
+    user_name varchar(24) UNIQUE,
     name VARCHAR(25) NOT NULL,
     last_name VARCHAR(25) NOT NULL,
     pwd VARCHAR(255) NOT NULL,
