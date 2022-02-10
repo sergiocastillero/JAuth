@@ -14,7 +14,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="51dp"
         app:srcCompat="@drawable/png_menu_user" />
 
     <TextView
@@ -24,7 +24,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="13dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="53dp"
         android:layout_toRightOf="@+id/imageUser"
         android:fontFamily="@font/comicneue_bold"
         android:text="Username"
