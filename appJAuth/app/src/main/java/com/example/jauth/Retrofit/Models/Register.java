@@ -4,6 +4,12 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Register {
+    @SerializedName("user_id")
+    @Expose
+    private String user_id;
+    @SerializedName("result")
+    @Expose
+    private String result;
     @SerializedName("name")
     @Expose
     private String name;
@@ -16,6 +22,27 @@ public class Register {
     @SerializedName("password")
     @Expose
     private String password;
+
+    public Register(String user_id, String password) {
+        this.user_id = user_id;
+        this.password = password;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
 
     public String getName() {
         return name;
@@ -50,10 +77,7 @@ public class Register {
     @Override
     public String toString() {
         return "Register{" +
-                "name='" + name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", email=" + email +
-                ", password=" + password +
+                "Result='" + result + '\'' +
                 '}';
     }
 }

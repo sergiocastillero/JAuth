@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.jauth.R;
+import com.example.jauth.Retrofit.Interfaces.URL.JAuthAPI;
 import com.example.jauth.Retrofit.Interfaces.CheckInApi;
 import com.example.jauth.Retrofit.Interfaces.LoginApi;
 import com.example.jauth.Retrofit.Interfaces.RegisterApi;
@@ -25,8 +26,6 @@ import com.example.jauth.databinding.FragmentAuthBinding;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AuthFragment extends Fragment {
 
@@ -87,12 +86,7 @@ public class AuthFragment extends Fragment {
     }
 
    private void postCheckIn(String user_id) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://private-11f82e-jauth.apiary-mock.com/v0/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        CheckInApi CheckInApi = retrofit.create(CheckInApi.class);
+        CheckInApi CheckInApi = JAuthAPI.getClient().create(CheckInApi.class);
 
         Call<CheckIn> CheckInCall = CheckInApi.postCheckIn(user_id);
 
@@ -120,14 +114,10 @@ public class AuthFragment extends Fragment {
     }
 
     private void postRegister(String user_id, String password) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://private-11f82e-jauth.apiary-mock.com/v0/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        final Register register = new Register(user_id, password);
+        RegisterApi RegisterApi = JAuthAPI.getClient().create(RegisterApi.class);
 
-        RegisterApi RegisterApi = retrofit.create(RegisterApi.class);
-
-        Call<Register> RegisterCall = RegisterApi.postRegister(user_id,password);
+        Call<Register> RegisterCall = RegisterApi.postRegister(register);
 
         RegisterCall.enqueue(new Callback<Register>() {
             @Override
@@ -137,7 +127,7 @@ public class AuthFragment extends Fragment {
                         Log.i("testauth", response.body().toString());
 
                         Register registerResponse = response.body();
-                        register_result.setText("Nom: " + registerResponse.getName() + System.lineSeparator() + "Cognom: " + registerResponse.getLast_name() + System.lineSeparator() + "Email: " + registerResponse.getEmail() + System.lineSeparator() + "Contraseña: " + registerResponse.getPassword());
+                        register_result.setText("Nom: " + registerResponse.getResult());
                     }
                 } catch (Exception e) {
                     Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -153,12 +143,7 @@ public class AuthFragment extends Fragment {
     }
 
     private void getLogin(String user_id, String password) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://private-11f82e-jauth.apiary-mock.com/v0/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        LoginApi LoginApi = retrofit.create(LoginApi.class);
+        LoginApi LoginApi = JAuthAPI.getClient().create(LoginApi.class);
 
         Call<Login> LoginCall = LoginApi.getLogin(user_id, password);
 
