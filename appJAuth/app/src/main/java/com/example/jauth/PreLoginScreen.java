@@ -30,9 +30,9 @@ public class PreLoginScreen extends AppCompatActivity {
         // Creating an intent to be able to go to another screen
         //goToRegisterScreen = new Intent(this, RegisterScreen.class);
         //goToLoginScreen = new Intent(this, LoginScreen.class);
-        goToMainActivity = new Intent(this, MainActivity.class);
+        goToMainActivity = new Intent(this, NavigationScreen.class);
 
-        // If TextView MainActivity is clicked change to MainActivity screen
+        // If TextView NavigationScreen is clicked change to NavigationScreen screen
         MainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

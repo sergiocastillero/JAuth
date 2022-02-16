@@ -1,23 +1,26 @@
 package com.example.jauth.Fragments;
 
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.jauth.R;
-import com.example.jauth.Retrofit.Interfaces.URL.JAuthAPI;
 import com.example.jauth.Retrofit.Interfaces.CheckInApi;
 import com.example.jauth.Retrofit.Interfaces.LoginApi;
 import com.example.jauth.Retrofit.Interfaces.RegisterApi;
+import com.example.jauth.Retrofit.Interfaces.URL.JAuthAPI;
 import com.example.jauth.Retrofit.Models.CheckIn;
 import com.example.jauth.Retrofit.Models.Login;
 import com.example.jauth.Retrofit.Models.Register;
@@ -31,11 +34,10 @@ public class AuthFragment extends Fragment {
 
     // Properties
     private FragmentAuthBinding binding;
-    private String checkText;
-    private TextView login_result;
-    private TextView register_result;
-    private TextView checkin_result;
-
+    private Button CheckBtn;
+    private TextView checkin_time;
+    private VideoView videoview;
+    private ImageView idcard;
 
     // Declare a SharedPreferences object reference since you are going to store
     // the clicked button's state using Android SharedPreferences class.
@@ -50,22 +52,24 @@ public class AuthFragment extends Fragment {
         View root = binding.getRoot();
 
         // Layout properties linked to add logic
-        Button CheckBtn = root.findViewById(R.id.btn_Check);
-        login_result = root.findViewById(R.id.TextView_Login);
-        register_result = root.findViewById(R.id.TextView_Register);
-        checkin_result = root.findViewById(R.id.TextView_CheckIn);
+        CheckBtn = root.findViewById(R.id.btn_Check);
+        checkin_time = root.findViewById(R.id.TextView_CheckIn);
+        videoview = root.findViewById(R.id.videoview);
+        idcard = root.findViewById(R.id.idcard);
+
+        //Drawable idcard_ok = ResourcesCompat.getDrawable(getResources(), R.raw.idcard_ok, null);
+        //Drawable idcard_ko = ResourcesCompat.getDrawable(getResources(), R.raw.idcard_ko, null);
+
 
         // If Check button is clicked
         CheckBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                /*
                 if (CheckBtn.getText().equals(getString(R.string.CheckIn))) {
                     CheckBtn.setText(getString(R.string.CheckOut));
                     CheckBtn.setSelected(true);
-
-                    postRegister("Oriol","password1234");
-
-                    getLogin("Oriol","password1234");
 
                     postCheckIn("Oriol");
                 } else {
@@ -73,6 +77,8 @@ public class AuthFragment extends Fragment {
                     CheckBtn.setSelected(false);
 
                 }
+                */
+                postCheckIn("Oriol");
             }
         });
 
@@ -98,7 +104,34 @@ public class AuthFragment extends Fragment {
                         Log.i("testauth", response.body().toString());
 
                         CheckIn checkinResponse = response.body();
-                        checkin_result.setText("Resultat: " + checkinResponse.getResult() + System.lineSeparator() + "Data: " + checkinResponse.getTimestamp() + System.lineSeparator() + "Tipus: " + checkinResponse.getType());
+                        checkin_time.setText("Last Timestamp: " + System.lineSeparator() + checkinResponse.getTimestamp());
+
+                        if (checkinResponse.getResult().equals("OK") && checkinResponse.getType().equals("Entrada")) {
+                            CheckBtn.setText(getString(R.string.CheckOut));
+                            CheckBtn.setSelected(true);
+
+                            Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/" + R.raw.idcard_ok);
+                            videoview.setVideoURI(uri);
+                            videoview.start();
+                            idcard.setImageDrawable(null);
+
+                        } else if(checkinResponse.getResult().equals("OK") && checkinResponse.getType().equals("Sortida")) {
+                            CheckBtn.setText(getString(R.string.CheckIn));
+                            CheckBtn.setSelected(false);
+
+                            Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/" + R.raw.idcard_ok);
+                            videoview.setVideoURI(uri);
+                            videoview.start();
+                            idcard.setImageDrawable(null);
+
+                        } else if((checkinResponse.getResult().equals("KO") && checkinResponse.getType().equals("Entrada")) || (checkinResponse.getResult().equals("KO") && checkinResponse.getType().equals("Sortida"))){
+                            checkin_time.setText("fail check");
+
+
+
+                        } else{
+                            checkin_time.setText("another error");
+                        }
                     }
                 } catch (Exception e) {
                     Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -127,7 +160,7 @@ public class AuthFragment extends Fragment {
                         Log.i("testauth", response.body().toString());
 
                         Register registerResponse = response.body();
-                        register_result.setText("Nom: " + registerResponse.getResult());
+                        //register_result.setText("Nom: " + registerResponse.getResult());
                     }
                 } catch (Exception e) {
                     Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -156,7 +189,7 @@ public class AuthFragment extends Fragment {
                         Log.i("testauth", response.body().toString());
 
                         Login loginResponse = response.body();
-                        login_result.setText("Usuari: " + loginResponse.getUser() + System.lineSeparator() + "Resultat: " + loginResponse.getResult());
+                        //login_result.setText("Usuari: " + loginResponse.getUser() + System.lineSeparator() + "Resultat: " + loginResponse.getResult());
                     }
                 } catch (Exception e) {
                     Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -172,4 +205,11 @@ public class AuthFragment extends Fragment {
         });
     }
 
+    /*
+    public void checkAnimation (Drawable drawable){
+        Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/" + drawable);
+        videoview.setVideoURI(uri);
+        videoview.start();
+    }
+     */
 }

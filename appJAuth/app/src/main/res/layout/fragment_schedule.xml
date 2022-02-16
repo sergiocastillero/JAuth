@@ -8,7 +8,7 @@
     tools:context=".Fragments.ScheduleFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/Rectangle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingStart="20dp"

@@ -14,5 +14,4 @@ public interface RegisterApi {
     Call<Register> postRegister(@Body Register register);
             //@Field("user_id") String user_id,
             //@Field("password") String password);
-
 }

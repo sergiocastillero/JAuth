@@ -13,7 +13,7 @@
         android:theme="@style/Theme.JAuth"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name=".MainActivity"
+            android:name=".NavigationScreen"
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.JAuth.NoActionBar" />

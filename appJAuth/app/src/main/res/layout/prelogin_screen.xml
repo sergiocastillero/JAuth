@@ -8,7 +8,7 @@
     tools:context=".PreLoginScreen">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/Rectangle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingStart="20dp"
@@ -30,11 +30,11 @@
         android:paddingEnd="60dp"
         android:text="MainActivity"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/Rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/Rectangle"
         app:layout_constraintVertical_bias="0.949" />
 
     <TextView
@@ -46,10 +46,10 @@
         android:paddingEnd="60dp"
         android:text="@string/welcomeToJAuth"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/Rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/Rectangle"
         app:layout_constraintVertical_bias="0.229" />
 
     <Button

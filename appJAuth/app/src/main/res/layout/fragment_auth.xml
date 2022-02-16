@@ -8,7 +8,7 @@
     tools:context=".Fragments.AuthFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/Rectangle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingStart="20dp"
@@ -39,35 +39,38 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/TextView_Login"
-        android:layout_width="273dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="364dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Check"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/TextView_Register"
-        android:layout_width="271dp"
-        android:layout_height="115dp"
-        android:layout_marginBottom="212dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Check"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/TextView_CheckIn"
-        android:layout_width="272dp"
-        android:layout_height="121dp"
-        android:layout_marginBottom="60dp"
+        android:layout_width="275dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="12dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/btn_Check"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <VideoView
+        android:id="@+id/videoview"
+        android:layout_width="210dp"
+        android:layout_height="344dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/TextView_CheckIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502" />
+
+    <ImageView
+        android:id="@+id/idcard"
+        android:layout_width="211dp"
+        android:layout_height="345dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/TextView_CheckIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/idcard_static" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
