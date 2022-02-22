@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="1dp"
         android:layout_marginTop="51dp"
-        app:srcCompat="@drawable/png_menu_user" />
+        app:srcCompat="@drawable/ic_menu_user" />
 
     <TextView
         android:id="@+id/userName"
@@ -30,21 +30,5 @@
         android:text="@string/menu_user"
         android:textColor="@color/oxfordBlue"
         android:textSize="18sp" />
-
-<!--
-    <Button
-        android:id="@+id/openMenu"
-        android:layout_width="51dp"
-        android:layout_height="37dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="3dp"
-        android:background="@color/transparente"
-        app:icon="@drawable/ic_openmenu"
-        app:iconSize="25dp"
-        app:iconTint="@color/oxfordBlue" />
--->
 
 </RelativeLayout>
