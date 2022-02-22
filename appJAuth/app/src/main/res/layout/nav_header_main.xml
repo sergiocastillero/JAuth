@@ -27,7 +27,7 @@
         android:layout_marginTop="53dp"
         android:layout_toRightOf="@+id/imageUser"
         android:fontFamily="@font/comicneue_bold"
-        android:text="Username"
+        android:text="@string/menu_user"
         android:textColor="@color/oxfordBlue"
         android:textSize="18sp" />
 

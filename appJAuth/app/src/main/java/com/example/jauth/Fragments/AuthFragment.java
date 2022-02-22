@@ -1,6 +1,7 @@
 package com.example.jauth.Fragments;
 
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -20,7 +22,7 @@ import com.example.jauth.R;
 import com.example.jauth.Retrofit.Interfaces.CheckInApi;
 import com.example.jauth.Retrofit.Interfaces.LoginApi;
 import com.example.jauth.Retrofit.Interfaces.RegisterApi;
-import com.example.jauth.Retrofit.Interfaces.URL.JAuthAPI;
+import com.example.jauth.Retrofit.Interfaces.URL.JAuthURL;
 import com.example.jauth.Retrofit.Models.CheckIn;
 import com.example.jauth.Retrofit.Models.Login;
 import com.example.jauth.Retrofit.Models.Register;
@@ -38,6 +40,7 @@ public class AuthFragment extends Fragment {
     private TextView checkin_time;
     private VideoView videoview;
     private ImageView idcard;
+    private CheckIn checkinResponse;
 
     // Declare a SharedPreferences object reference since you are going to store
     // the clicked button's state using Android SharedPreferences class.
@@ -55,11 +58,10 @@ public class AuthFragment extends Fragment {
         CheckBtn = root.findViewById(R.id.btn_Check);
         checkin_time = root.findViewById(R.id.TextView_CheckIn);
         videoview = root.findViewById(R.id.videoview);
-        idcard = root.findViewById(R.id.idcard);
+        //idcard = root.findViewById(R.id.idcard);
 
-        //Drawable idcard_ok = ResourcesCompat.getDrawable(getResources(), R.raw.idcard_ok, null);
-        //Drawable idcard_ko = ResourcesCompat.getDrawable(getResources(), R.raw.idcard_ko, null);
-
+        //Calling method for show first video frame
+        firstFrameAnimation();
 
         // If Check button is clicked
         CheckBtn.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +80,8 @@ public class AuthFragment extends Fragment {
 
                 }
                 */
-                postCheckIn("Oriol");
+                postCheckIn("prof2");
+                postRegister("prof1");
             }
         });
 
@@ -92,7 +95,7 @@ public class AuthFragment extends Fragment {
     }
 
    private void postCheckIn(String user_id) {
-        CheckInApi CheckInApi = JAuthAPI.getClient().create(CheckInApi.class);
+        CheckInApi CheckInApi = JAuthURL.getClient().create(CheckInApi.class);
 
         Call<CheckIn> CheckInCall = CheckInApi.postCheckIn(user_id);
 
@@ -103,30 +106,23 @@ public class AuthFragment extends Fragment {
                     if(response.isSuccessful()) {
                         Log.i("testauth", response.body().toString());
 
-                        CheckIn checkinResponse = response.body();
-                        checkin_time.setText("Last Timestamp: " + System.lineSeparator() + checkinResponse.getTimestamp());
+                        checkinResponse = response.body();
 
-                        if (checkinResponse.getResult().equals("OK") && checkinResponse.getType().equals("Entrada")) {
+                        if (checkinResponse.getResult().equals("OK") && checkinResponse.getType().equals("Entrada") && CheckBtn.getText().equals(getString(R.string.CheckIn))) {
                             CheckBtn.setText(getString(R.string.CheckOut));
                             CheckBtn.setSelected(true);
 
-                            Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/" + R.raw.idcard_ok);
-                            videoview.setVideoURI(uri);
-                            videoview.start();
-                            idcard.setImageDrawable(null);
+                            checkAnimation(R.raw.idcard_ok);
 
-                        } else if(checkinResponse.getResult().equals("OK") && checkinResponse.getType().equals("Sortida")) {
+                        } else if(checkinResponse.getResult().equals("OK") && checkinResponse.getType().equals("Sortida") && CheckBtn.getText().equals(getString(R.string.CheckOut))) {
                             CheckBtn.setText(getString(R.string.CheckIn));
                             CheckBtn.setSelected(false);
 
-                            Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/" + R.raw.idcard_ok);
-                            videoview.setVideoURI(uri);
-                            videoview.start();
-                            idcard.setImageDrawable(null);
+                            checkAnimation(R.raw.idcard_ok);
 
                         } else if((checkinResponse.getResult().equals("KO") && checkinResponse.getType().equals("Entrada")) || (checkinResponse.getResult().equals("KO") && checkinResponse.getType().equals("Sortida"))){
+                            checkAnimation(R.raw.idcard_ko);
                             checkin_time.setText("fail check");
-
 
 
                         } else{
@@ -146,11 +142,11 @@ public class AuthFragment extends Fragment {
         });
     }
 
-    private void postRegister(String user_id, String password) {
-        final Register register = new Register(user_id, password);
-        RegisterApi RegisterApi = JAuthAPI.getClient().create(RegisterApi.class);
+    private void postRegister(String user_id) {
+        final Register register = new Register(user_id, "Oriol", "Jauma", "oriol.jauma@asdf.com", "1233455");
+        RegisterApi RegisterApi = JAuthURL.getClient().create(RegisterApi.class);
 
-        Call<Register> RegisterCall = RegisterApi.postRegister(register);
+        Call<Register> RegisterCall = RegisterApi.postRegister(register, user_id);
 
         RegisterCall.enqueue(new Callback<Register>() {
             @Override
@@ -176,7 +172,7 @@ public class AuthFragment extends Fragment {
     }
 
     private void getLogin(String user_id, String password) {
-        LoginApi LoginApi = JAuthAPI.getClient().create(LoginApi.class);
+        LoginApi LoginApi = JAuthURL.getClient().create(LoginApi.class);
 
         Call<Login> LoginCall = LoginApi.getLogin(user_id, password);
 
@@ -205,11 +201,26 @@ public class AuthFragment extends Fragment {
         });
     }
 
-    /*
-    public void checkAnimation (Drawable drawable){
-        Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/" + drawable);
+    public void firstFrameAnimation(){
+        MediaController mediacontroller = new MediaController(videoview.getContext());
+        mediacontroller.setAnchorView(videoview);
+        Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/" + R.raw.idcard_ok);
+        ViewGroup.LayoutParams params=videoview.getLayoutParams();
+        videoview.setLayoutParams(params);
+        videoview.setVideoURI(uri);
+        videoview.requestFocus();
+        videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            public void onPrepared(MediaPlayer mp) {
+                videoview.seekTo(1);
+            }
+        });
+    }
+
+    public void checkAnimation(int video){
+        Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/" + video);
         videoview.setVideoURI(uri);
         videoview.start();
+        checkin_time.setText("Last Timestamp: " + System.lineSeparator() + checkinResponse.getTimestamp());
+
     }
-     */
 }

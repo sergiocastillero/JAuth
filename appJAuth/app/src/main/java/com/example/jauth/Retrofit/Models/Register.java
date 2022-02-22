@@ -23,8 +23,16 @@ public class Register {
     @Expose
     private String password;
 
-    public Register(String user_id, String password) {
+    public Register(String user_id) {
         this.user_id = user_id;
+    }
+
+    public Register(String user_id, String name, String last_name, String email, String password) {
+        this.user_id = user_id;
+        this.result = result;
+        this.name = name;
+        this.last_name = last_name;
+        this.email = email;
         this.password = password;
     }
 

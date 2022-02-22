@@ -3,7 +3,7 @@ package com.example.jauth.Retrofit.Interfaces.URL;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class JAuthAPI {
+public class JAuthURL {
 
     public static final String BASE_URL = "https://private-11f82e-jauth.apiary-mock.com/v0/";
     private static Retrofit retrofit = null;

@@ -25,7 +25,7 @@
         android:id="@+id/btn_Check"
         android:layout_width="232dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="90dp"
         android:background="@drawable/rounded_button"
         android:backgroundTint="@color/botton_background_color"
         android:fontFamily="@font/comicneue_bold"
@@ -52,25 +52,12 @@
         android:id="@+id/videoview"
         android:layout_width="210dp"
         android:layout_height="344dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="85dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/TextView_CheckIn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.502" />
-
-    <ImageView
-        android:id="@+id/idcard"
-        android:layout_width="211dp"
-        android:layout_height="345dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/TextView_CheckIn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/idcard_static" />
-
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,6 +41,7 @@
     <string name="titlesales">Top sales</string>
     <string name="coin">$</string>
 
+    <string name="menu_user">Username</string>
     <string name="menu_auth">Check In</string>
     <string name="menu_schedule">Schedule</string>
     <string name="menu_assists">Assists</string>

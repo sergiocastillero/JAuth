@@ -37,7 +37,8 @@
     <string name="titlesales">Top ventas</string>
     <string name="coin">€</string>
 
-    <string name="menu_auth">Fitxatje</string>
+    <string name="menu_user">Nombre de usuario</string>
+    <string name="menu_auth">Fichaje</string>
     <string name="menu_schedule">Horario</string>
     <string name="menu_assists">Asistencias</string>
     <string name="menu_settings">Configuración</string>
